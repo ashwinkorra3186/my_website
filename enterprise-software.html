@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POS Systems - Modern Point-of-Sale Solutions | Kivra.services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* POS Systems specific styles */
+    .service-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pos-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .pos-feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border-left: 4px solid #667eea;
+    }
+
+    .pos-feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .pos-feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .solutions-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .solution-item {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .solution-image {
+      height: 250px;
+      background: #f8fafc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .solution-content {
+      padding: 2rem;
+    }
+
+    .business-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .business-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .business-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .business-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .business-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .benefit-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .benefit-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="index.html"><h3>Kivra<span class="brand-accent">.services</span></h3></a>
+      </div>
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <div class="nav__actions">
+        <a href="index.html#contact" class="btn btn--primary">Get Quote</a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / <a href="index.html#services" style="color: rgba(255,255,255,0.8);">Services</a> / POS Systems
+      </div>
+      
+      <div class="service-hero__content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">
+            Modern POS Systems
+            <span style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600; margin-left: 1rem; vertical-align: middle;">Cloud-Based</span>
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Modern point-of-sale solutions for retail and hospitality businesses. Cloud-based systems with 
+            inventory management, sales analytics, and multi-location support for seamless operations.
+          </p>
+          
+          <div class="stats-grid" style="color: white;">
+            <div class="stat-card">
+              <div class="stat-number">99.9%</div>
+              <p style="opacity: 0.9;">Uptime</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <p style="opacity: 0.9;">Support</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100+</div>
+              <p style="opacity: 0.9;">Integrations</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large" style="background: white; color: #667eea;">Get Started</a>
+            <a href="#features" class="btn btn--outline btn--large" style="border-color: white; color: white;">Explore Features</a>
+          </div>
+        </div>
+        
+        <div>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+            <img src="images/pos-system-hero.png" alt="Modern POS System Dashboard" style="width: 100%; height: auto; min-height: 400px; background: #f8fafc;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Showcase -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">POS Solutions</span>
+        <h2 class="section-title">Complete Point-of-Sale Systems</h2>
+        <p class="section-description">
+          Comprehensive POS solutions designed for different business types with industry-specific features and integrations.
+        </p>
+      </div>
+      
+      <div class="solutions-showcase">
+        <div class="solution-item">
+          <div class="solution-image">
+            <img src="images/pos-retail-interface.png" alt="Retail POS Interface" style="background: #f8fafc;" />
+          </div>
+          <div class="solution-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Retail POS System</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Complete retail management with inventory tracking, customer management, loyalty programs, 
+              and seamless payment processing for brick-and-mortar stores.
+            </p>
+          </div>
+        </div>
+        
+        <div class="solution-item">
+          <div class="solution-image">
+            <img src="images/pos-restaurant-interface.png" alt="Restaurant POS Interface" style="background: #f8fafc;" />
+          </div>
+          <div class="solution-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Restaurant POS System</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Specialized restaurant management with table ordering, kitchen display systems, 
+              menu management, and staff scheduling for hospitality businesses.
+            </p>
+          </div>
+        </div>
+        
+        <div class="solution-item">
+          <div class="solution-image">
+            <img src="images/pos-mobile-interface.png" alt="Mobile POS Interface" style="background: #f8fafc;" />
+          </div>
+          <div class="solution-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Mobile POS Solution</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Portable point-of-sale solution for events, pop-up stores, and mobile businesses 
+              with tablet-based interface and wireless payment processing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">System Features</span>
+        <h2 class="section-title">Comprehensive POS Capabilities</h2>
+        <p class="section-description">
+          Everything you need to manage your business operations efficiently with modern point-of-sale technology.
+        </p>
+      </div>
+      
+      <div class="pos-features-grid">
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-cash-register"></i>
+          </div>
+          <h3>Payment Processing</h3>
+          <p>Accept all payment types including credit cards, debit cards, mobile payments, and contactless transactions with secure payment processing and PCI compliance.</p>
+        </div>
+        
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-boxes"></i>
+          </div>
+          <h3>Inventory Management</h3>
+          <p>Real-time inventory tracking, automated reorder points, stock alerts, barcode scanning, and comprehensive product catalog management across multiple locations.</p>
+        </div>
+        
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Sales Analytics</h3>
+          <p>Detailed sales reports, performance analytics, trend analysis, and business insights with customizable dashboards and automated reporting features.</p>
+        </div>
+        
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Customer Management</h3>
+          <p>Customer database, purchase history, loyalty programs, email marketing integration, and personalized customer experiences to drive repeat business.</p>
+        </div>
+        
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Employee Management</h3>
+          <p>Staff scheduling, time tracking, performance monitoring, role-based permissions, and commission tracking for comprehensive workforce management.</p>
+        </div>
+        
+        <div class="pos-feature-card">
+          <div class="pos-feature-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud-Based Access</h3>
+          <p>Access your business data from anywhere with cloud-based architecture, automatic backups, real-time synchronization, and offline capability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Types -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Business Solutions</span>
+        <h2 class="section-title">POS Systems for Every Business</h2>
+        <p class="section-description">
+          Tailored point-of-sale solutions designed for specific business types and industry requirements.
+        </p>
+      </div>
+      
+      <div class="business-types">
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-store"></i>
+          </div>
+          <h3>Retail Stores</h3>
+          <p>Complete retail management with inventory control, customer loyalty programs, multi-location support, and e-commerce integration for omnichannel retail operations.</p>
+        </div>
+        
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Restaurants</h3>
+          <p>Specialized restaurant POS with table management, kitchen display systems, menu customization, delivery integration, and staff scheduling for hospitality businesses.</p>
+        </div>
+        
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-cut"></i>
+          </div>
+          <h3>Salons & Spas</h3>
+          <p>Service-based POS with appointment scheduling, client management, service packages, staff commission tracking, and beauty industry-specific features.</p>
+        </div>
+        
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <h3>Cafes & Bars</h3>
+          <p>Quick-service POS with rapid order processing, tab management, happy hour pricing, inventory tracking for beverages, and customer loyalty programs.</p>
+        </div>
+        
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Automotive</h3>
+          <p>Specialized automotive POS with service scheduling, parts inventory, work order management, vehicle history tracking, and integration with automotive databases.</p>
+        </div>
+        
+        <div class="business-card">
+          <div class="business-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3>E-commerce</h3>
+          <p>Integrated online and offline POS with e-commerce platform synchronization, unified inventory, customer data sync, and omnichannel order management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Business Benefits</span>
+        <h2 class="section-title">Transform Your Business Operations</h2>
+        <p class="section-description">
+          Experience measurable improvements in efficiency, sales, and customer satisfaction with our modern POS systems.
+        </p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-number">40%</div>
+          <p style="opacity: 0.9;">Faster Checkout</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-number">25%</div>
+          <p style="opacity: 0.9;">Sales Increase</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-number">60%</div>
+          <p style="opacity: 0.9;">Time Savings</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-number">90%</div>
+          <p style="opacity: 0.9;">Error Reduction</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-number">35%</div>
+          <p style="opacity: 0.9;">Cost Reduction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Pricing</span>
+        <h2 class="section-title">POS System Plans</h2>
+        <p class="section-description">
+          Flexible pricing options designed to scale with your business growth and operational needs.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Basic</h3>
+          <div class="price">$49</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1 terminal</li>
+            <li><i class="fas fa-check"></i> Basic reporting</li>
+            <li><i class="fas fa-check"></i> Inventory management</li>
+            <li><i class="fas fa-check"></i> Payment processing</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card pricing-card--popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <div class="price">$99</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 3 terminals</li>
+            <li><i class="fas fa-check"></i> Advanced analytics</li>
+            <li><i class="fas fa-check"></i> Customer management</li>
+            <li><i class="fas fa-check"></i> Employee management</li>
+            <li><i class="fas fa-check"></i> Multi-location support</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="period">contact us</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited terminals</li>
+            <li><i class="fas fa-check"></i> Custom integrations</li>
+            <li><i class="fas fa-check"></i> Dedicated support</li>
+            <li><i class="fas fa-check"></i> API access</li>
+            <li><i class="fas fa-check"></i> White-label options</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta" style="padding: 6rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <h2>Ready to Modernize Your Business?</h2>
+          <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.7; margin: 1.5rem 0;">
+            Transform your business operations with our modern POS systems. Increase efficiency, 
+            boost sales, and provide better customer experiences starting today.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large">Start Free Trial</a>
+            <a href="index.html#contact" class="btn btn--outline btn--large">Request Demo</a>
+          </div>
+        </div>
+        <div>
+          <img src="images/pos-cta.png" alt="Modernize Your Business" style="width: 100%; height: auto; min-height: 250px; background: #f8fafc; border-radius: 1rem;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>Kivra<span class="brand-accent">.services</span></h3>
+          <p>Transforming businesses with AI-powered technology solutions.</p>
+          
+          <div class="footer__social">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="website-development.html">Website Development</a></li>
+              <li><a href="compass-lms.html">Compass LMS</a></li>
+              <li><a href="ai-call-center.html">AI Call Center</a></li>
+              <li><a href="ai-instagram-agent.html">Instagram Marketing</a></li>
+              <li><a href="enterprise-software.html">POS Systems</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Contact</h4>
+            <ul>
+              <li>hello@kivra.services</li>
+              <li>+1 (555) 123-4567</li>
+              <li>Tech Innovation Hub</li>
+              <li>Digital District, TC 10101</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Kivra.services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

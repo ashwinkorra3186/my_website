@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compass LMS - Advanced Learning Management System | Kivra.services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* LMS specific styles */
+    .service-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lms-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .lms-feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .lms-feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .lms-feature-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .dashboard-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .dashboard-item {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-image {
+      height: 300px;
+      background: #f8fafc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dashboard-content {
+      padding: 2rem;
+    }
+
+    .role-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .role-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .role-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .role-card:hover::before {
+      opacity: 1;
+    }
+
+    .architecture-visual {
+      background: #f8fafc;
+      padding: 3rem;
+      border-radius: 1rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .tech-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .tech-item-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .tech-item-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .tech-item-card i {
+      font-size: 2.5rem;
+      color: #667eea;
+      margin-bottom: 1rem;
+    }
+
+    /* Enhanced Pricing Section */
+    .pricing-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.06) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(102, 126, 234, 0.03) 50%, transparent 70%);
+    }
+
+    .pricing-section .section-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-section .section-subtitle {
+      color: #667eea;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+    }
+
+    .pricing-section .section-title {
+      color: #1a202c;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      position: relative;
+    }
+
+    .pricing-section .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .pricing-section .section-description {
+      color: #4a5568;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .pricing-card--popular {
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-card--popular::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .pricing-card--popular:hover {
+      transform: translateY(-10px) scale(1.07);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      z-index: 10;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #667eea;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .pricing-card .period {
+      text-align: center;
+      color: #4a5568;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 2rem 0;
+      padding: 0;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .features-list li i {
+      color: #10b981;
+      font-size: 0.9rem;
+      width: 16px;
+      height: 16px;
+      background: #ecfdf5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.875rem 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card .btn--primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      color: white;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .pricing-card .btn--outline {
+      border: 2px solid #667eea;
+      color: #667eea;
+      background: transparent;
+    }
+
+    .pricing-card .btn--outline:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="index.html"><h3>Kivra<span class="brand-accent">.services</span></h3></a>
+      </div>
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <div class="nav__actions">
+        <a href="index.html#contact" class="btn btn--primary">Get Quote</a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / <a href="index.html#services" style="color: rgba(255,255,255,0.8);">Services</a> / Compass LMS
+      </div>
+      
+      <div class="service-hero__content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">
+            Compass LMS
+            <span style="display: block; font-size: 1.2rem; opacity: 0.9; font-weight: 400; margin-top: 0.5rem;">Advanced Learning Management System</span>
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Complete learning management system for educational institutions. Multi-tenant SaaS architecture 
+            with advanced analytics, course management, and seamless user experience.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+            <div style="text-align: center;">
+              <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">Multi-Tenant</h3>
+              <p style="opacity: 0.9; font-size: 0.9rem;">SaaS Architecture</p>
+            </div>
+            <div style="text-align: center;">
+              <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">5 Roles</h3>
+              <p style="opacity: 0.9; font-size: 0.9rem;">User Management</p>
+            </div>
+            <div style="text-align: center;">
+              <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">24/7</h3>
+              <p style="opacity: 0.9; font-size: 0.9rem;">Support</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large" style="background: white; color: #667eea;">Request Demo</a>
+            <a href="#features" class="btn btn--outline btn--large" style="border-color: white; color: white;">Explore Features</a>
+          </div>
+        </div>
+        
+        <div>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+            <img src="images/compass-lms-login.png" alt="Compass LMS Dashboard" style="width: 100%; height: auto; min-height: 400px; background: #f8fafc;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Showcase -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Platform Overview</span>
+        <h2 class="section-title">Comprehensive Learning Dashboards</h2>
+        <p class="section-description">
+          Role-based dashboards designed for optimal user experience across all educational stakeholders.
+        </p>
+      </div>
+      
+      <div class="dashboard-showcase">
+        <div class="dashboard-item">
+          <div class="dashboard-image">
+            <img src="images/student.png" alt="Student Dashboard" style="background: #f8fafc;" />
+          </div>
+          <div class="dashboard-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Student Dashboard</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Intuitive interface for course access, assignment tracking, grade monitoring, 
+              and progress visualization with personalized learning analytics.
+            </p>
+          </div>
+        </div>
+        
+        <div class="dashboard-item">
+          <div class="dashboard-image">
+            <img src="images/teacher.png" alt="Teacher Dashboard" style="background: #f8fafc;" />
+          </div>
+          <div class="dashboard-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Teacher Dashboard</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Comprehensive tools for course creation, student management, grading system, 
+              attendance tracking, and detailed performance analytics.
+            </p>
+          </div>
+        </div>
+        
+        <div class="dashboard-item">
+          <div class="dashboard-image">
+            <img src="images/admindashboard.jpg" alt="Admin Dashboard" style="background: #f8fafc;" />
+          </div>
+          <div class="dashboard-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Admin Dashboard</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Complete organizational oversight with user management, system analytics, 
+              course administration, and institutional reporting capabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Platform Features</span>
+        <h2 class="section-title">Everything You Need for Modern Education</h2>
+        <p class="section-description">
+          Comprehensive features designed to enhance learning experiences and streamline educational management.
+        </p>
+      </div>
+      
+      <div class="lms-features-grid">
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Multi-Tenant Architecture</h3>
+          <p>Complete organizational separation with custom branding, unique domains, and isolated data for each institution.</p>
+        </div>
+        
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Course Management</h3>
+          <p>Create, organize, and manage courses with multimedia content, structured lessons, and flexible enrollment options.</p>
+        </div>
+        
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3>Assignment System</h3>
+          <p>Comprehensive assignment workflow with submission tracking, automated grading, and detailed feedback mechanisms.</p>
+        </div>
+        
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Advanced Analytics</h3>
+          <p>Real-time insights into student performance, course effectiveness, and institutional metrics with exportable reports.</p>
+        </div>
+        
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>Role-Based Access</h3>
+          <p>Five distinct user roles with appropriate permissions: Super Admin, Org Admin, Admin, Teacher, and Student.</p>
+        </div>
+        
+        <div class="lms-feature-card">
+          <div class="lms-feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile Responsive</h3>
+          <p>Fully responsive design ensuring optimal learning experience across all devices and screen sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Roles -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">User Management</span>
+        <h2 class="section-title">Designed for Every Educational Role</h2>
+        <p class="section-description">
+          Tailored interfaces and permissions for different stakeholders in the educational ecosystem.
+        </p>
+      </div>
+      
+      <div class="role-cards">
+        <div class="role-card">
+          <i class="fas fa-crown" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+          <h3 style="margin-bottom: 1rem;">Super Admin</h3>
+          <p style="opacity: 0.9;">Complete platform control, organization management, and system-wide analytics.</p>
+        </div>
+        
+        <div class="role-card">
+          <i class="fas fa-building" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+          <h3 style="margin-bottom: 1rem;">Organization Admin</h3>
+          <p style="opacity: 0.9;">Institutional oversight, user management, and organizational settings control.</p>
+        </div>
+        
+        <div class="role-card">
+          <i class="fas fa-user-shield" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+          <h3 style="margin-bottom: 1rem;">Admin</h3>
+          <p style="opacity: 0.9;">Course administration, user support, and departmental management capabilities.</p>
+        </div>
+        
+        <div class="role-card">
+          <i class="fas fa-chalkboard-teacher" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+          <h3 style="margin-bottom: 1rem;">Teacher</h3>
+          <p style="opacity: 0.9;">Course creation, student assessment, grade management, and progress tracking.</p>
+        </div>
+        
+        <div class="role-card">
+          <i class="fas fa-user-graduate" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+          <h3 style="margin-bottom: 1rem;">Student</h3>
+          <p style="opacity: 0.9;">Course access, assignment submission, progress monitoring, and learning resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture -->
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Technology</span>
+        <h2 class="section-title">Built on Modern Technology Stack</h2>
+        <p class="section-description">
+          Scalable, secure, and performance-optimized architecture for reliable educational delivery.
+        </p>
+      </div>
+      
+      <div class="architecture-visual">
+        <img src="images/compass architecture.png" alt="Compass LMS Architecture" style="max-width: 100%; height: auto; min-height: 300px; background: #f8fafc; border-radius: 1rem;" />
+      </div>
+      
+      <div class="tech-stack-grid">
+        <div class="tech-item-card">
+          <i class="fab fa-react"></i>
+          <h4>React</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Modern UI Framework</p>
+        </div>
+        
+        <div class="tech-item-card">
+          <i class="fab fa-node-js"></i>
+          <h4>Node.js</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Backend Runtime</p>
+        </div>
+        
+        <div class="tech-item-card">
+          <i class="fas fa-database"></i>
+          <h4>PostgreSQL</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Robust Database</p>
+        </div>
+        
+        <div class="tech-item-card">
+          <i class="fab fa-aws"></i>
+          <h4>AWS Cloud</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Scalable Infrastructure</p>
+        </div>
+        
+        <div class="tech-item-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Security</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Enterprise Grade</p>
+        </div>
+        
+        <div class="tech-item-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Responsive</h4>
+          <p style="color: #4a5568; font-size: 0.9rem;">Mobile Optimized</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Pricing</span>
+        <h2 class="section-title">Flexible Plans for Every Institution</h2>
+        <p class="section-description">
+          Scalable pricing options designed to grow with your educational needs.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">₹2,999</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Up to 100 students</li>
+            <li><i class="fas fa-check"></i> 5 courses</li>
+            <li><i class="fas fa-check"></i> Basic analytics</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+            <li><i class="fas fa-check"></i> Mobile app access</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card pricing-card--popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <div class="price">₹7,999</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Up to 500 students</li>
+            <li><i class="fas fa-check"></i> Unlimited courses</li>
+            <li><i class="fas fa-check"></i> Advanced analytics</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+            <li><i class="fas fa-check"></i> Custom branding</li>
+            <li><i class="fas fa-check"></i> API access</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="period">contact us</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited students</li>
+            <li><i class="fas fa-check"></i> Custom features</li>
+            <li><i class="fas fa-check"></i> Dedicated support</li>
+            <li><i class="fas fa-check"></i> On-premise option</li>
+            <li><i class="fas fa-check"></i> Custom integrations</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta" style="padding: 6rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <h2>Ready to Transform Your Educational Institution?</h2>
+          <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.7; margin: 1.5rem 0;">
+            Join hundreds of schools and colleges already using Compass LMS to deliver exceptional 
+            learning experiences. Start your free trial today and see the difference.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large">Start Free Trial</a>
+            <a href="index.html#contact" class="btn btn--outline btn--large">Request Demo</a>
+          </div>
+        </div>
+        <div>
+          <img src="images/compass-cta.png" alt="Transform Your Education" style="width: 100%; height: auto; min-height: 250px; background: #f8fafc; border-radius: 1rem;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>Kivra<span class="brand-accent">.services</span></h3>
+          <p>Transforming businesses with AI-powered technology solutions.</p>
+          
+          <div class="footer__social">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="website-development.html">Website Development</a></li>
+              <li><a href="compass-lms.html">Compass LMS</a></li>
+              <li><a href="ai-call-center.html">AI Call Center</a></li>
+              <li><a href="ai-instagram-agent.html">Instagram Marketing</a></li>
+              <li><a href="enterprise-software.html">POS Systems</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Contact</h4>
+            <ul>
+              <li>hello@kivra.services</li>
+              <li>+1 (555) 123-4567</li>
+              <li>Tech Innovation Hub</li>
+              <li>Digital District, TC 10101</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Kivra.services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

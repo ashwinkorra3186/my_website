@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Instagram Marketing - Intelligent Social Media Automation | Kivra.services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Instagram Agent specific styles */
+    .service-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ig-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .ig-feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border-left: 4px solid #667eea;
+    }
+
+    .ig-feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .ig-feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .automation-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .automation-item {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .automation-image {
+      height: 250px;
+      background: #f8fafc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .automation-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .automation-content {
+      padding: 2rem;
+    }
+
+    .strategy-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .strategy-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strategy-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .strategy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .strategy-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .metric-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="index.html"><h3>Kivra<span class="brand-accent">.services</span></h3></a>
+      </div>
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <div class="nav__actions">
+        <a href="index.html#contact" class="btn btn--primary">Get Quote</a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / <a href="index.html#services" style="color: rgba(255,255,255,0.8);">Services</a> / AI Instagram Marketing
+      </div>
+      
+      <div class="service-hero__content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">
+            AI Instagram Marketing
+            <span style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600; margin-left: 1rem; vertical-align: middle;">Smart Automation</span>
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Intelligent Instagram automation for paid promotions and marketing campaigns. AI-driven content strategy, 
+            audience engagement optimization, and comprehensive campaign analytics for maximum ROI.
+          </p>
+          
+          <div class="stats-grid" style="color: white;">
+            <div class="stat-card">
+              <div class="stat-number">300%</div>
+              <p style="opacity: 0.9;">Engagement Boost</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <p style="opacity: 0.9;">AI Monitoring</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">85%</div>
+              <p style="opacity: 0.9;">Cost Reduction</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large" style="background: white; color: #667eea;">Start Campaign</a>
+            <a href="#features" class="btn btn--outline btn--large" style="border-color: white; color: white;">Explore Features</a>
+          </div>
+        </div>
+        
+        <div>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+            <img src="images/instagram-agent-hero.png" alt="AI Instagram Marketing Dashboard" style="width: 100%; height: auto; min-height: 400px; background: #f8fafc;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Automation Showcase -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Automation Features</span>
+        <h2 class="section-title">Intelligent Instagram Automation</h2>
+        <p class="section-description">
+          Advanced AI algorithms that understand your audience and optimize every aspect of your Instagram presence.
+        </p>
+      </div>
+      
+      <div class="automation-showcase">
+        <div class="automation-item">
+          <div class="automation-image">
+            <img src="images/instagram-content-ai.png" alt="AI Content Creation Dashboard" style="background: #f8fafc;" />
+          </div>
+          <div class="automation-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">AI Content Creation</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Generate engaging posts, stories, and captions using advanced AI that understands your brand voice 
+              and audience preferences for maximum engagement.
+            </p>
+          </div>
+        </div>
+        
+        <div class="automation-item">
+          <div class="automation-image">
+            <img src="images/instagram-analytics.png" alt="Advanced Analytics Dashboard" style="background: #f8fafc;" />
+          </div>
+          <div class="automation-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Performance Analytics</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              Comprehensive insights into reach, engagement, follower growth, and ROI metrics 
+              with AI-powered recommendations for optimization.
+            </p>
+          </div>
+        </div>
+        
+        <div class="automation-item">
+          <div class="automation-image">
+            <img src="images/instagram-targeting.png" alt="Audience Targeting Interface" style="background: #f8fafc;" />
+          </div>
+          <div class="automation-content">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Smart Targeting</h3>
+            <p style="color: #4a5568; line-height: 1.6;">
+              AI-driven audience analysis and targeting that identifies the most valuable prospects 
+              and optimizes ad spend for better conversion rates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Platform Features</span>
+        <h2 class="section-title">Complete Instagram Marketing Solution</h2>
+        <p class="section-description">
+          Everything you need to dominate Instagram marketing with intelligent automation and data-driven strategies.
+        </p>
+      </div>
+      
+      <div class="ig-features-grid">
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>AI Content Generation</h3>
+          <p>Automated creation of engaging posts, stories, and captions tailored to your brand voice, with hashtag optimization and trend analysis for maximum reach.</p>
+        </div>
+        
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3>Smart Audience Targeting</h3>
+          <p>Advanced demographic and behavioral analysis to identify high-value prospects, with automated lookalike audience creation and interest-based targeting.</p>
+        </div>
+        
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3>Automated Scheduling</h3>
+          <p>Optimal posting times based on audience activity patterns, automated story publishing, and cross-platform content syndication for maximum efficiency.</p>
+        </div>
+        
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Engagement Automation</h3>
+          <p>Intelligent comment responses, automated DM handling, follower engagement strategies, and community management with sentiment analysis.</p>
+        </div>
+        
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Advanced Analytics</h3>
+          <p>Real-time performance tracking, ROI measurement, competitor analysis, and AI-powered insights with actionable recommendations for growth.</p>
+        </div>
+        
+        <div class="ig-feature-card">
+          <div class="ig-feature-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3>Ad Campaign Optimization</h3>
+          <p>Automated bid management, A/B testing of creatives, budget optimization across campaigns, and performance-based scaling for maximum ROI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Strategies -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Marketing Strategies</span>
+        <h2 class="section-title">Proven Growth Strategies</h2>
+        <p class="section-description">
+          Data-driven marketing approaches that deliver measurable results and sustainable Instagram growth.
+        </p>
+      </div>
+      
+      <div class="strategy-cards">
+        <div class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3>Viral Content Strategy</h3>
+          <p>AI-powered trend analysis and content optimization designed to maximize virality potential and organic reach through strategic hashtag usage and timing.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Influencer Partnerships</h3>
+          <p>Automated influencer discovery, outreach campaigns, partnership management, and performance tracking for scalable influencer marketing programs.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3>E-commerce Integration</h3>
+          <p>Seamless product catalog integration, automated shopping tags, conversion tracking, and sales funnel optimization for direct Instagram sales.</p>
+        </div>
+        
+        <div class="strategy-card">
+          <div class="strategy-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Competitive Analysis</h3>
+          <p>Real-time competitor monitoring, strategy analysis, gap identification, and opportunity discovery to stay ahead of the competition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Metrics -->
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Performance Metrics</span>
+        <h2 class="section-title">Measurable Results</h2>
+        <p class="section-description">
+          Track your success with comprehensive metrics and AI-powered insights that drive continuous improvement.
+        </p>
+      </div>
+      
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number">300%</div>
+          <p style="opacity: 0.9;">Avg. Engagement Increase</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">150%</div>
+          <p style="opacity: 0.9;">Follower Growth Rate</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">85%</div>
+          <p style="opacity: 0.9;">Cost Reduction</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">95%</div>
+          <p style="opacity: 0.9;">Client Satisfaction</p>
+        </div>
+        
+        <div class="metric-card">
+          <div class="metric-number">24/7</div>
+          <p style="opacity: 0.9;">Automated Monitoring</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Pricing</span>
+        <h2 class="section-title">Instagram Marketing Plans</h2>
+        <p class="section-description">
+          Flexible pricing options designed to scale with your business growth and marketing objectives.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">$199</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 50 posts/month</li>
+            <li><i class="fas fa-check"></i> Basic analytics</li>
+            <li><i class="fas fa-check"></i> Content scheduling</li>
+            <li><i class="fas fa-check"></i> Hashtag optimization</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card pricing-card--popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <div class="price">$499</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 200 posts/month</li>
+            <li><i class="fas fa-check"></i> Advanced analytics</li>
+            <li><i class="fas fa-check"></i> AI content generation</li>
+            <li><i class="fas fa-check"></i> Audience targeting</li>
+            <li><i class="fas fa-check"></i> Engagement automation</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="period">contact us</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited posts</li>
+            <li><i class="fas fa-check"></i> Custom AI models</li>
+            <li><i class="fas fa-check"></i> Dedicated manager</li>
+            <li><i class="fas fa-check"></i> Advanced integrations</li>
+            <li><i class="fas fa-check"></i> White-label solution</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta" style="padding: 6rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <h2>Ready to Dominate Instagram Marketing?</h2>
+          <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.7; margin: 1.5rem 0;">
+            Transform your Instagram presence with AI-powered automation that drives real results. 
+            Start growing your audience and increasing engagement today.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large">Start Free Trial</a>
+            <a href="index.html#contact" class="btn btn--outline btn--large">Get Demo</a>
+          </div>
+        </div>
+        <div>
+          <img src="images/instagram-cta.png" alt="Start Instagram Marketing" style="width: 100%; height: auto; min-height: 250px; background: #f8fafc; border-radius: 1rem;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>Kivra<span class="brand-accent">.services</span></h3>
+          <p>Transforming businesses with AI-powered technology solutions.</p>
+          
+          <div class="footer__social">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="website-development.html">Website Development</a></li>
+              <li><a href="compass-lms.html">Compass LMS</a></li>
+              <li><a href="ai-call-center.html">AI Call Center</a></li>
+              <li><a href="ai-instagram-agent.html">Instagram Marketing</a></li>
+              <li><a href="enterprise-software.html">POS Systems</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Contact</h4>
+            <ul>
+              <li>hello@kivra.services</li>
+              <li>+1 (555) 123-4567</li>
+              <li>Tech Innovation Hub</li>
+              <li>Digital District, TC 10101</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Kivra.services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

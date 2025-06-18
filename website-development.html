@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Development - Professional Web Solutions | Kivra.services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for service pages */
+    .service-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-hero__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .service-hero__stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .service-hero__stats .stat {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem 1rem;
+      border-radius: 0.75rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-hero__stats .stat h3 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .service-hero__stats .stat p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+
+    .service-hero__visual {
+      position: relative;
+    }
+
+    .hero-image-main {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-image-main img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+    }
+
+    .tech-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tech-badge {
+      background: rgba(255, 255, 255, 0.9);
+      color: #667eea;
+      padding: 0.5rem 1rem;
+      border-radius: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .showcase-item {
+      border-radius: 1rem;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .showcase-item:hover {
+      transform: translateY(-8px);
+    }
+
+    .showcase-item--large {
+      grid-column: span 2;
+    }
+
+    .showcase-image {
+      position: relative;
+      height: 200px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    .showcase-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .showcase-item:hover .showcase-overlay {
+      opacity: 1;
+    }
+
+    .showcase-info {
+      text-align: center;
+      color: white;
+      padding: 1rem;
+    }
+
+    .showcase-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .showcase-info p {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .showcase-tags {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .showcase-tags span {
+      background: #667eea;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.7rem;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .step-reverse {
+      direction: rtl;
+    }
+
+    .step-reverse .step-content {
+      direction: ltr;
+    }
+
+    .step-visual {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .step-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .step-features {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .step-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: #4a5568;
+    }
+
+    .step-features li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .type-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .type-card:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Enhanced Website Types Section */
+    .website-types {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      position: relative;
+    }
+
+    .website-types::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    }
+
+    .types-grid {
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .type-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .type-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .type-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .type-content {
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .type-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .type-content h3::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* Custom icons for each website type */
+    .type-card:nth-child(1) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7ZM9 8V17H11V8H9ZM13 8V17H15V8H13Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-card:nth-child(2) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 7V3H2V21H22V7H12ZM6 19H4V17H6V19ZM6 15H4V13H6V15ZM6 11H4V9H6V11ZM6 7H4V5H6V7ZM10 19H8V17H10V19ZM10 15H8V13H10V15ZM10 11H8V9H10V11ZM10 7H8V5H10V7ZM20 19H12V17H20V19ZM20 15H12V13H20V15ZM20 11H12V9H20V11Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-card:nth-child(3) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2ZM4 14L5 17H3L4 14ZM7 14L8 17H6L7 14ZM18 14L19 17H17L18 14ZM21 14L22 17H20L21 14Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-card:nth-child(4) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM5 19V5H19V19H5ZM7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H14V17H7V15Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-card:nth-child(5) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M4 6H20V16H4V6ZM20 18H4V20H20V18ZM20 4H4C2.89 4 2 4.89 2 6V20C2 21.11 2.89 22 4 22H20C21.11 22 22 21.11 22 20V6C22 4.89 21.11 4 20 4ZM12 15L16 10H8L12 15Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-card:nth-child(6) .type-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM5 19V5H19V19H5ZM12 6L15.5 10H8.5L12 6ZM12 18L8.5 14H15.5L12 18Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .type-content p {
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .type-features {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    /* Enhanced Pricing Section */
+    .pricing-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.06) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(102, 126, 234, 0.03) 50%, transparent 70%);
+    }
+
+    .pricing-section .section-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-section .section-subtitle {
+      color: #667eea;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+    }
+
+    .pricing-section .section-title {
+      color: #1a202c;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      position: relative;
+    }
+
+    .pricing-section .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .pricing-section .section-description {
+      color: #4a5568;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .pricing-card--popular {
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-card--popular::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .pricing-card--popular:hover {
+      transform: translateY(-10px) scale(1.07);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      z-index: 10;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #667eea;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .pricing-card .period {
+      text-align: center;
+      color: #4a5568;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 2rem 0;
+      padding: 0;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .features-list li i {
+      color: #10b981;
+      font-size: 0.9rem;
+      width: 16px;
+      height: 16px;
+      background: #ecfdf5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.875rem 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card .btn--primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      color: white;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .pricing-card .btn--outline {
+      border: 2px solid #667eea;
+      color: #667eea;
+      background: transparent;
+    }
+
+    .pricing-card .btn--outline:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .type-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      color: #4a5568;
+      font-size: 0.9rem;
+    }
+
+    .type-features li::before {
+      content: '•';
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    /* Service Overview Styles */
+    .service-overview {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-overview::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+      opacity: 0.3;
+    }
+
+    .overview-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .overview-text h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .overview-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .overview-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
+
+    .key-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .benefit:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      border-left-color: #667eea;
+    }
+
+    .benefit i {
+      font-size: 1.5rem;
+      color: #667eea;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 0.25rem;
+    }
+
+    .benefit h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit p {
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .overview-visual {
+      position: relative;
+    }
+
+    .overview-visual::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1.5rem;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .overview-visual img {
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .overview-visual:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 968px) {
+      .service-hero__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .service-hero__stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .showcase-item--large {
+        grid-column: span 1;
+      }
+
+      .process-step,
+      .step-reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .types-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .overview-text h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .overview-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-hero__stats {
+        grid-template-columns: 1fr;
+      }
+
+      .overview-text h2 {
+        font-size: 1.8rem;
+      }
+
+      .benefit {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="index.html"><h3>Kivra<span class="brand-accent">.services</span></h3></a>
+      </div>
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <div class="nav__actions">
+        <a href="index.html#contact" class="btn btn--primary">Get Quote</a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.8);">
+        <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / <a href="index.html#services" style="color: rgba(255,255,255,0.8);">Services</a> / Website Development
+      </div>
+      
+      <div class="service-hero__content">
+        <div>
+          <h1 class="service-hero__title" style="font-size: 3.5rem; margin-bottom: 1.5rem;">
+            Professional Website Development
+          </h1>
+          <p class="service-hero__description" style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Custom, responsive websites built with cutting-edge technologies. From corporate sites to e-commerce platforms, 
+            we create digital experiences that drive conversions and showcase your brand perfectly.
+          </p>
+          
+          <div class="service-hero__buttons">
+            <a href="index.html#contact" class="btn btn--primary btn--large" style="background: white; color: #667eea;">Start Your Project</a>
+            <a href="#showcase" class="btn btn--outline btn--large" style="border-color: white; color: white;">View Examples</a>
+          </div>
+        </div>
+        
+        <div class="service-hero__visual">
+          <div class="hero-image-main">
+            <img src="images/website1.png" alt="Professional Website Development" style="background: #f8fafc; min-height: 300px;" />
+            <div class="image-overlay">
+              <div class="tech-badges">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Next.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Tailwind</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-hero__stats">
+        <div class="stat">
+          <h3>25+</h3>
+          <p>Websites Built</p>
+        </div>
+        <div class="stat">
+          <h3>100%</h3>
+          <p>Mobile Responsive</p>
+        </div>
+        <div class="stat">
+          <h3>99%</h3>
+          <p>Page Speed Score</p>
+        </div>
+        <div class="stat">
+          <h3>24/7</h3>
+          <p>Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview -->
+  <section class="service-overview">
+    <div class="container">
+      <div class="overview-content">
+        <div class="overview-text">
+          <h2>Why Choose Our Web Development?</h2>
+          <p>
+            We don't just build websites – we create digital experiences that drive results. 
+            Our development process combines aesthetic excellence with technical precision, 
+            ensuring your website not only looks stunning but performs flawlessly across all devices.
+          </p>
+          <p>
+            From initial concept to final deployment, we handle every aspect of your web project 
+            with meticulous attention to detail and industry best practices.
+          </p>
+          
+          <div class="key-benefits">
+            <div class="benefit">
+              <i class="fas fa-rocket"></i>
+              <div>
+                <h4>Lightning Fast</h4>
+                <p>Optimized for speed with 99+ PageSpeed scores</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h4>Secure & Reliable</h4>
+                <p>Built with security best practices and robust architecture</p>
+              </div>
+            </div>
+            <div class="benefit">
+              <i class="fas fa-search"></i>
+              <div>
+                <h4>SEO Optimized</h4>
+                <p>Structured for maximum search engine visibility</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="overview-visual">
+          <img src="images/webss8.png" alt="Web Development Process" style="background: #f8fafc; border-radius: 1rem; min-height: 300px; width: 100%;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website Showcase -->
+  <section id="showcase" class="website-showcase" style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Work</span>
+        <h2 class="section-title">Website Portfolio</h2>
+        <p class="section-description">
+          Explore our recent website projects across various industries and niches.
+        </p>
+      </div>
+      
+      <div class="showcase-grid">
+        <div class="showcase-item showcase-item--large">
+          <div class="showcase-image">
+            <img src="images/webss2.png" alt="E-commerce Website" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>E-commerce Platform</h3>
+                <p>Modern online store with payment integration</p>
+                <div class="showcase-tags">
+                  <span>React</span>
+                  <span>Stripe</span>
+                  <span>Node.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-image">
+            <img src="images/webss4.png" alt="Corporate Website" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>Corporate Website</h3>
+                <p>Professional business presence</p>
+                <div class="showcase-tags">
+                  <span>Next.js</span>
+                  <span>CMS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-image">
+            <img src="images/webss5.png" alt="Portfolio Website" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>Creative Portfolio</h3>
+                <p>Stunning visual showcase</p>
+                <div class="showcase-tags">
+                  <span>Vue.js</span>
+                  <span>Animation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-image">
+            <img src="images/webss3.png" alt="Restaurant Website" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>Restaurant Website</h3>
+                <p>Online ordering and reservations</p>
+                <div class="showcase-tags">
+                  <span>WordPress</span>
+                  <span>WooCommerce</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-image">
+            <img src="images/webss1.png" alt="SaaS Platform" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>SaaS Platform</h3>
+                <p>Complex web application</p>
+                <div class="showcase-tags">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-image">
+            <img src="images/webss7.png" alt="Blog Website" style="background: #f8fafc;" />
+            <div class="showcase-overlay">
+              <div class="showcase-info">
+                <h3>Content Platform</h3>
+                <p>Feature-rich blog and CMS</p>
+                <div class="showcase-tags">
+                  <span>Gatsby</span>
+                  <span>GraphQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Development Process -->
+  <section class="development-process" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Process</span>
+        <h2 class="section-title">How We Build Your Website</h2>
+        <p class="section-description">
+          A proven methodology that ensures quality, efficiency, and client satisfaction.
+        </p>
+      </div>
+      
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-visual">
+            <img src="images/discovery.png" alt="Discovery Phase" style="background: #f8fafc; min-height: 250px; width: 100%;" />
+          </div>
+          <div class="step-content">
+            <div class="step-number">01</div>
+            <h3>Discovery & Planning</h3>
+            <p>We start by understanding your business goals, target audience, and project requirements. This phase includes competitor analysis, feature planning, and technical architecture decisions.</p>
+            <ul class="step-features">
+              <li>Requirements gathering</li>
+              <li>Competitive analysis</li>
+              <li>Technical planning</li>
+              <li>Timeline creation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="process-step step-reverse">
+          <div class="step-visual">
+            <img src="images/design.png" alt="Design Phase" style="background: #f8fafc; min-height: 250px; width: 100%;" />
+          </div>
+          <div class="step-content">
+            <div class="step-number">02</div>
+            <h3>Design & Prototyping</h3>
+            <p>Our designers create stunning mockups and interactive prototypes that bring your vision to life. We focus on user experience and conversion optimization.</p>
+            <ul class="step-features">
+              <li>Wireframing</li>
+              <li>Visual design</li>
+              <li>Interactive prototypes</li>
+              <li>Design system creation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-visual">
+            <img src="images/deployment.png" alt="Development Phase" style="background: #f8fafc; min-height: 250px; width: 100%;" />
+          </div>
+          <div class="step-content">
+            <div class="step-number">03</div>
+            <h3>Development & Testing</h3>
+            <p>Our developers transform designs into fast, secure, and scalable websites using modern technologies and best practices. Rigorous testing ensures everything works perfectly.</p>
+            <ul class="step-features">
+              <li>Frontend development</li>
+              <li>Backend integration</li>
+              <li>Performance optimization</li>
+              <li>Quality assurance testing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="process-step step-reverse">
+          <div class="step-visual">
+            <img src="images/launch.png" alt="Launch Phase" style="background: #f8fafc; min-height: 250px; width: 100%;" />
+          </div>
+          <div class="step-content">
+            <div class="step-number">04</div>
+            <h3>Launch & Support</h3>
+            <p>We handle the technical deployment and provide ongoing support to ensure your website continues to perform optimally and stays up-to-date.</p>
+            <ul class="step-features">
+              <li>Domain & hosting setup</li>
+              <li>SSL certificate installation</li>
+              <li>SEO optimization</li>
+              <li>Ongoing maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack -->
+  <section class="technology-stack" style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Our Tech Stack</span>
+        <h2 class="section-title">Technologies We Use</h2>
+        <p class="section-description">
+          We leverage the latest and most reliable technologies to build exceptional websites.
+        </p>
+      </div>
+      
+      <div class="tech-categories">
+        <div class="tech-category">
+          <div class="tech-icon" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; text-align: center;">
+            <i class="fab fa-js-square"></i>
+          </div>
+          <h3>Frontend</h3>
+          <div class="tech-items">
+            <span class="tech-item">React</span>
+            <span class="tech-item">Next.js</span>
+            <span class="tech-item">Vue.js</span>
+            <span class="tech-item">TypeScript</span>
+            <span class="tech-item">Tailwind CSS</span>
+            <span class="tech-item">SASS/SCSS</span>
+          </div>
+        </div>
+        
+        <div class="tech-category">
+          <div class="tech-icon" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; text-align: center;">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend</h3>
+          <div class="tech-items">
+            <span class="tech-item">Node.js</span>
+            <span class="tech-item">Express.js</span>
+            <span class="tech-item">Python</span>
+            <span class="tech-item">Django</span>
+            <span class="tech-item">PHP</span>
+            <span class="tech-item">Laravel</span>
+          </div>
+        </div>
+        
+        <div class="tech-category">
+          <div class="tech-icon" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; text-align: center;">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Database</h3>
+          <div class="tech-items">
+            <span class="tech-item">MongoDB</span>
+            <span class="tech-item">PostgreSQL</span>
+            <span class="tech-item">MySQL</span>
+            <span class="tech-item">Firebase</span>
+            <span class="tech-item">Supabase</span>
+            <span class="tech-item">Redis</span>
+          </div>
+        </div>
+        
+        <div class="tech-category">
+          <div class="tech-icon" style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; text-align: center;">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Deployment</h3>
+          <div class="tech-items">
+            <span class="tech-item">Vercel</span>
+            <span class="tech-item">Netlify</span>
+            <span class="tech-item">AWS</span>
+            <span class="tech-item">Digital Ocean</span>
+            <span class="tech-item">Cloudflare</span>
+            <span class="tech-item">Docker</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website Types -->
+  <section class="website-types" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Website Types</span>
+        <h2 class="section-title">We Build All Types of Websites</h2>
+        <p class="section-description">
+          From simple landing pages to complex web applications, we have the expertise to deliver.
+        </p>
+      </div>
+      
+      <div class="types-grid">
+        <div class="type-card">
+          <div class="type-content">
+            <h3>E-commerce Stores</h3>
+            <p>Full-featured online stores with payment gateways, inventory management, and order processing.</p>
+            <ul class="type-features">
+              <li>Shopping cart & checkout</li>
+              <li>Payment integration</li>
+              <li>Inventory management</li>
+              <li>Order tracking</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-content">
+            <h3>Corporate Websites</h3>
+            <p>Professional business websites that establish credibility and showcase your services effectively.</p>
+            <ul class="type-features">
+              <li>Professional design</li>
+              <li>Service showcases</li>
+              <li>Team profiles</li>
+              <li>Contact forms</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-content">
+            <h3>Portfolio Sites</h3>
+            <p>Creative portfolios that beautifully showcase your work and attract potential clients.</p>
+            <ul class="type-features">
+              <li>Project galleries</li>
+              <li>Case studies</li>
+              <li>Client testimonials</li>
+              <li>Contact integration</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-content">
+            <h3>Blogs & Content Sites</h3>
+            <p>Content management systems optimized for publishing and audience engagement.</p>
+            <ul class="type-features">
+              <li>Content management</li>
+              <li>SEO optimization</li>
+              <li>Comment systems</li>
+              <li>Social sharing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-content">
+            <h3>SaaS Platforms</h3>
+            <p>Complex web applications with user authentication, dashboards, and advanced functionality.</p>
+            <ul class="type-features">
+              <li>User authentication</li>
+              <li>Dashboard interfaces</li>
+              <li>API integrations</li>
+              <li>Subscription billing</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="type-card">
+          <div class="type-content">
+            <h3>Landing Pages</h3>
+            <p>High-converting landing pages designed to capture leads and drive specific actions.</p>
+            <ul class="type-features">
+              <li>Conversion focused</li>
+              <li>A/B testing ready</li>
+              <li>Lead capture forms</li>
+              <li>Analytics integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section" style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Pricing</span>
+        <h2 class="section-title">Website Development Packages</h2>
+        <p class="section-description">
+          Transparent pricing for every budget. Choose the package that fits your needs.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">$2,499</div>
+          <p class="period">One-time payment</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Up to 5 pages</li>
+            <li><i class="fas fa-check"></i> Responsive design</li>
+            <li><i class="fas fa-check"></i> Basic SEO</li>
+            <li><i class="fas fa-check"></i> Contact forms</li>
+            <li><i class="fas fa-check"></i> 3 months support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card pricing-card--popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <div class="price">$4,999</div>
+          <p class="period">One-time payment</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Up to 15 pages</li>
+            <li><i class="fas fa-check"></i> Custom design</li>
+            <li><i class="fas fa-check"></i> Advanced SEO</li>
+            <li><i class="fas fa-check"></i> CMS integration</li>
+            <li><i class="fas fa-check"></i> E-commerce ready</li>
+            <li><i class="fas fa-check"></i> 6 months support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="period">Quote based</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited pages</li>
+            <li><i class="fas fa-check"></i> Custom functionality</li>
+            <li><i class="fas fa-check"></i> API integrations</li>
+            <li><i class="fas fa-check"></i> Performance optimization</li>
+            <li><i class="fas fa-check"></i> 12 months support</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="cta-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;">
+        <div class="cta-text">
+          <h2>Ready to Build Your Dream Website?</h2>
+          <p>
+            Let's create a website that not only looks amazing but drives real results for your business. 
+            Our team is ready to bring your vision to life with cutting-edge technology and proven strategies.
+          </p>
+          <div class="cta-buttons" style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large">Start Your Project</a>
+            <a href="index.html#portfolio" class="btn btn--outline btn--large">View Our Work</a>
+          </div>
+        </div>
+        <div class="cta-visual">
+          <img src="images/web-dev-cta.png" alt="Start Your Website Project" style="background: #f8fafc; border-radius: 1rem; min-height: 250px; width: 100%;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>Kivra<span class="brand-accent">.services</span></h3>
+          <p>Transforming businesses with AI-powered technology solutions.</p>
+          
+          <div class="footer__social">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="website-development.html">Website Development</a></li>
+              <li><a href="compass-lms.html">Compass LMS</a></li>
+              <li><a href="ai-call-center.html">AI Call Center</a></li>
+              <li><a href="ai-instagram-agent.html">Instagram Marketing</a></li>
+              <li><a href="enterprise-software.html">POS Systems</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Contact</h4>
+            <ul>
+              <li>hello@kivra.services</li>
+              <li>+1 (555) 123-4567</li>
+              <li>Tech Innovation Hub</li>
+              <li>Digital District, TC 10101</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Kivra.services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

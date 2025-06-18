@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kivra AI Call Center - Advanced Voice AI Solution | Kivra.services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* AI Call Center specific styles */
+    .service-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .ai-feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border-left: 4px solid #667eea;
+    }
+
+    .ai-feature-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .ai-feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .tech-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .tech-item {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .tech-image {
+      height: 250px;
+      background: #f8fafc;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tech-content {
+      padding: 2rem;
+    }
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .use-case-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .use-case-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .use-case-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .voice-models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .voice-model-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .voice-model-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Enhanced Technology Showcase Section */
+    .tech-showcase-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-showcase-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    }
+
+    .tech-showcase {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin: 4rem 0;
+    }
+
+    .tech-item {
+      background: white;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+    }
+
+    .tech-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .tech-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .tech-item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tech-content h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .tech-content h3::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      border-radius: 0.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* Custom icons for each tech item */
+    .tech-item:nth-child(1) .tech-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2ZM4 14L5 17H3L4 14ZM7 14L8 17H6L7 14ZM18 14L19 17H17L18 14ZM21 14L22 17H20L21 14Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .tech-item:nth-child(2) .tech-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2ZM4 14L5 17H3L4 14ZM7 14L8 17H6L7 14ZM18 14L19 17H17L18 14ZM21 14L22 17H20L21 14Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .tech-item:nth-child(3) .tech-content h3::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2ZM4 14L5 17H3L4 14ZM7 14L8 17H6L7 14ZM18 14L19 17H17L18 14ZM21 14L22 17H20L21 14Z"/></svg>');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .tech-content p {
+      color: #4a5568;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* Enhanced Pricing Section */
+    .pricing-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.06) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(102, 126, 234, 0.03) 50%, transparent 70%);
+    }
+
+    .pricing-section .section-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-section .section-subtitle {
+      color: #667eea;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+    }
+
+    .pricing-section .section-title {
+      color: #1a202c;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      position: relative;
+    }
+
+    .pricing-section .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .pricing-section .section-description {
+      color: #4a5568;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid transparent;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .pricing-card--popular {
+      transform: scale(1.05);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .pricing-card--popular::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .pricing-card--popular:hover {
+      transform: translateY(-10px) scale(1.07);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      z-index: 10;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .pricing-card .price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #667eea;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .pricing-card .period {
+      text-align: center;
+      color: #4a5568;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 2rem 0;
+      padding: 0;
+    }
+
+    .features-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: #4a5568;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .features-list li i {
+      color: #10b981;
+      font-size: 0.9rem;
+      width: 16px;
+      height: 16px;
+      background: #ecfdf5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.875rem 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card .btn--primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      color: white;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .pricing-card .btn--primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .pricing-card .btn--outline {
+      border: 2px solid #667eea;
+      color: #667eea;
+      background: transparent;
+    }
+
+    .pricing-card .btn--outline:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav container">
+      <div class="nav__brand">
+        <a href="index.html"><h3>Kivra<span class="brand-accent">.services</span></h3></a>
+      </div>
+      
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="index.html#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      
+      <div class="nav__actions">
+        <a href="index.html#contact" class="btn btn--primary">Get Quote</a>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.8);">Home</a> / <a href="index.html#services" style="color: rgba(255,255,255,0.8);">Services</a> / AI Call Center
+      </div>
+      
+      <div class="service-hero__content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <h1 style="font-size: 3.5rem; margin-bottom: 1rem;">
+            Kivra AI Call Center
+            <span style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 600; margin-left: 1rem; vertical-align: middle;">English Only</span>
+          </h1>
+          <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Real-time voice AI assistant powered by OpenAI and Twilio. Handle customer calls, appointments, 
+            and support with 200ms latency and advanced function calling capabilities.
+          </p>
+          
+          <div class="stats-grid" style="color: white;">
+            <div class="stat-card">
+              <div class="stat-number">200ms</div>
+              <p style="opacity: 0.9;">Voice Latency</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <p style="opacity: 0.9;">Availability</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5</div>
+              <p style="opacity: 0.9;">Voice Models</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large" style="background: white; color: #667eea;">Request Demo</a>
+            <a href="#features" class="btn btn--outline btn--large" style="border-color: white; color: white;">Explore Features</a>
+          </div>
+        </div>
+        
+        <div>
+          <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);">
+            <img src="images/kivra-ai-call.png" alt="AI Call Center Dashboard" style="width: 100%; height: auto; min-height: 400px; background: #f8fafc;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Showcase -->
+  <section class="tech-showcase-section" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Technology Stack</span>
+        <h2 class="section-title">Powered by Cutting-Edge AI</h2>
+        <p class="section-description">
+          Integration of OpenAI's Realtime API with Twilio telephony for enterprise-grade voice AI solutions.
+        </p>
+      </div>
+      
+      <div class="tech-showcase">
+        <div class="tech-item">
+          <div class="tech-content">
+            <h3>Live Monitoring Dashboard</h3>
+            <p>
+              Real-time conversation monitoring, transcript display, function call logs, and 
+              WebSocket status indicators for complete call oversight.
+            </p>
+          </div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-content">
+            <h3>System Architecture</h3>
+            <p>
+              WebSocket-based architecture connecting Twilio telephony with OpenAI's Realtime API 
+              for seamless bidirectional audio streaming.
+            </p>
+          </div>
+        </div>
+        
+        <div class="tech-item">
+          <div class="tech-content">
+            <h3>AI Configuration</h3>
+            <p>
+              Customize AI behavior, voice models, function calling, and conversation flow 
+              with real-time configuration updates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features -->
+  <section id="features" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Platform Features</span>
+        <h2 class="section-title">Advanced Voice AI Capabilities</h2>
+        <p class="section-description">
+          Enterprise-grade features designed for seamless customer communication and business automation.
+        </p>
+      </div>
+      
+      <div class="ai-features-grid">
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-microphone"></i>
+          </div>
+          <h3>Real-Time Voice Processing</h3>
+          <p>Bidirectional audio streaming with ~200ms latency, Voice Activity Detection, interruption handling, and natural conversation flow for human-like interactions.</p>
+        </div>
+        
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3>Function Calling System</h3>
+          <p>AI can execute custom functions with JSON parameters, manual override capabilities, live function logs, and comprehensive error handling for business automation.</p>
+        </div>
+        
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Live Monitoring Dashboard</h3>
+          <p>Real-time transcript display, multi-user message separation, WebSocket status indicators, call health monitoring, and session analytics.</p>
+        </div>
+        
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Twilio Integration</h3>
+          <p>Seamless telephony integration with G.711 μ-law codec support, automated phone number configuration, webhook handling, and scalable call routing.</p>
+        </div>
+        
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <h3>Session Configuration</h3>
+          <p>AI prompt customization, live voice model switching (ash, ballad, coral, sage, verse), real-time config changes, and behavior modification.</p>
+        </div>
+        
+        <div class="ai-feature-card">
+          <div class="ai-feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>Secure credential handling, API key management, CORS control, encrypted connections, session pooling, and production-ready architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Applications</span>
+        <h2 class="section-title">Versatile AI Call Solutions</h2>
+        <p class="section-description">
+          Transform your customer communications across multiple business scenarios and industries.
+        </p>
+      </div>
+      
+      <div class="use-cases-grid">
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Customer Service</h3>
+          <p>24/7 customer support with intelligent call routing, FAQ handling, issue resolution, and seamless human agent transfer when needed.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3>Appointment Scheduling</h3>
+          <p>Automated appointment booking, calendar integration, reminder calls, rescheduling management, and availability checking.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3>Lead Qualification</h3>
+          <p>Intelligent prospect screening, information gathering, lead scoring, qualification criteria assessment, and CRM integration.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <h3>Survey & Feedback</h3>
+          <p>Automated survey collection, customer feedback gathering, satisfaction scoring, and comprehensive data analysis for insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voice Models -->
+  <section style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Voice Options</span>
+        <h2 class="section-title">Choose Your AI Voice</h2>
+        <p class="section-description">
+          Multiple voice models optimized for different communication styles and business scenarios.
+        </p>
+      </div>
+      
+      <div class="voice-models-grid">
+        <div class="voice-model-card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Ash</h3>
+          <p style="opacity: 0.9;">Professional and authoritative tone, perfect for business communications and formal interactions.</p>
+        </div>
+        
+        <div class="voice-model-card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Ballad</h3>
+          <p style="opacity: 0.9;">Warm and melodic voice, ideal for customer service and friendly conversations.</p>
+        </div>
+        
+        <div class="voice-model-card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Coral</h3>
+          <p style="opacity: 0.9;">Bright and energetic tone, great for sales calls and engaging interactions.</p>
+        </div>
+        
+        <div class="voice-model-card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Sage</h3>
+          <p style="opacity: 0.9;">Calm and wise voice, suitable for educational content and advisory roles.</p>
+        </div>
+        
+        <div class="voice-model-card">
+          <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Verse</h3>
+          <p style="opacity: 0.9;">Creative and expressive tone, perfect for marketing and promotional calls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Pricing</span>
+        <h2 class="section-title">AI Call Center Plans</h2>
+        <p class="section-description">
+          Flexible pricing options for businesses of all sizes with transparent call-based billing.
+        </p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">$299</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 1,000 minutes/month</li>
+            <li><i class="fas fa-check"></i> 1 phone number</li>
+            <li><i class="fas fa-check"></i> Basic monitoring</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+            <li><i class="fas fa-check"></i> 5 voice models</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card pricing-card--popular">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <div class="price">$799</div>
+          <p class="period">per month</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> 5,000 minutes/month</li>
+            <li><i class="fas fa-check"></i> 5 phone numbers</li>
+            <li><i class="fas fa-check"></i> Advanced analytics</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+            <li><i class="fas fa-check"></i> Function calling</li>
+            <li><i class="fas fa-check"></i> Custom prompts</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <p class="period">contact us</p>
+          <ul class="features-list">
+            <li><i class="fas fa-check"></i> Unlimited minutes</li>
+            <li><i class="fas fa-check"></i> Unlimited numbers</li>
+            <li><i class="fas fa-check"></i> Dedicated support</li>
+            <li><i class="fas fa-check"></i> Custom integrations</li>
+            <li><i class="fas fa-check"></i> SLA guarantee</li>
+          </ul>
+          <a href="index.html#contact" class="btn btn--outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta" style="padding: 6rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <h2>Ready to Transform Your Customer Communications?</h2>
+          <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.7; margin: 1.5rem 0;">
+            Experience the future of customer service with our intelligent voice AI solution. 
+            Available in English with enterprise-grade reliability and 200ms response time.
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+            <a href="index.html#contact" class="btn btn--primary btn--large">Request Demo</a>
+            <a href="index.html#contact" class="btn btn--outline btn--large">Get Quote</a>
+          </div>
+        </div>
+        <div>
+          <img src="images/ai-call-cta.png" alt="Start AI Call Center Demo" style="width: 100%; height: auto; min-height: 250px; background: #f8fafc; border-radius: 1rem;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <h3>Kivra<span class="brand-accent">.services</span></h3>
+          <p>Transforming businesses with AI-powered technology solutions.</p>
+          
+          <div class="footer__social">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer__links">
+          <div class="footer__column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="website-development.html">Website Development</a></li>
+              <li><a href="compass-lms.html">Compass LMS</a></li>
+              <li><a href="ai-call-center.html">AI Call Center</a></li>
+              <li><a href="ai-instagram-agent.html">Instagram Marketing</a></li>
+              <li><a href="enterprise-software.html">POS Systems</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4>Contact</h4>
+            <ul>
+              <li>hello@kivra.services</li>
+              <li>+1 (555) 123-4567</li>
+              <li>Tech Innovation Hub</li>
+              <li>Digital District, TC 10101</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Kivra.services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
